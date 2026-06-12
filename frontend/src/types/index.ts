@@ -1,8 +1,16 @@
 export type TaskStatus = 'pending' | 'running' | 'success' | 'failed' | 'retry'
 export type NodeType = 'scheduler' | 'worker'
 
+export interface Team {
+  id: string
+  name: string
+  color: string
+  createdAt: number
+}
+
 export interface Task {
   id: string
+  teamId: string
   name: string
   status: TaskStatus
   node: string
@@ -17,6 +25,7 @@ export interface Task {
 
 export interface ClusterNode {
   id: string
+  teamId: string
   name: string
   type: NodeType
   status: 'online' | 'offline' | 'overloaded'
@@ -27,6 +36,7 @@ export interface ClusterNode {
 }
 
 export interface MetricsSnapshot {
+  teamId: string
   time: number
   totalTasks: number
   runningTasks: number
