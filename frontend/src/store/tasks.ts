@@ -25,7 +25,7 @@ function generateTasks(teamId: string, nodes: ClusterNode[]): Task[] {
     const s = status[Math.floor(Math.random() * 4)]
     const node = nodes[Math.floor(Math.random() * nodes.length)]
     return {
-      id: `${teamId}-task-${1000 + i}`,
+      id: `${teamId}-task-${100000000 + i}`,
       teamId,
       name: names[i % names.length],
       status: s,
