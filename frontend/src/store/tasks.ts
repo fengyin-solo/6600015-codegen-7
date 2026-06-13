@@ -13,7 +13,7 @@ function generateNodes(teamId: string): ClusterNode[] {
     status: Math.random() > 0.1 ? 'online' as const : 'overloaded' as const,
     cpu: +(20 + Math.random() * 60).toFixed(1),
     memory: +(30 + Math.random() * 50).toFixed(1),
-    tasks: Math.floor(Math.random() * 8),
+    tasks: Math.floor(Math.random() * 8000),
     uptime: 3600 + Math.floor(Math.random() * 86400),
   }))
 }
